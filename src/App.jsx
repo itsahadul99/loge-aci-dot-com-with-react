@@ -13,13 +13,16 @@ function App() {
       .then(res => res.json())
       .then(data => setProducts(data));
   }, [])
+  const handleAddToCart = (product) => {
+    console.log("Cart item adding soon");
+  }
   return (
     <>
       <Header />
       <main className="container mx-auto px-5 lg:px-10 py-5 lg:py-10">
         <div className="flex flex-col-reverse lg:flex-row justify-between gap-5 lg:gap-10">
-          <Products products={products} />
-          <Card/>
+          <Products products={products} handleAddToCart={handleAddToCart} />
+          <Card />
         </div>
       </main>
     </>
