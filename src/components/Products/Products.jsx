@@ -6,6 +6,7 @@ const Products = ({products,handleAddToCart}) => {
         <div className="grid grid-cols-1 lg:grid-cols-3 justify-center gap-5">
             {
                 products.map(product => <Product
+                    key={product.id}
                     product ={product}
                     handleAddToCart={handleAddToCart}
                 ></Product>)
